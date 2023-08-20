@@ -1,0 +1,17 @@
+{
+  "name": "wanderlust-landingpage",
+  "version": "1.0.0",
+  "description": "Explore breathtaking destinations, travel tips, and inspiring stories that fuel your passion for adventure.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1"
+  }
+}
