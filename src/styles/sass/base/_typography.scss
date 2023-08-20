@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+html {
+  font-family: $typeface-primary;
+  color: $text-color;
+  font-size: $fs-normal;
+  font-weight: $fw-normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $background-color;
+}
