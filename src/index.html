@@ -23,7 +23,47 @@
 </head>
 
 <body>
-  <h1>Hello World</h1>
+  <header id="header" class="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <img src="assets/img/logo.svg" alt="logo">
+      </a>
+
+      <div id="navMenu" class="nav__menu">
+        <ul id="navList" class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Pricing</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Events</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Contact</a>
+          </li>
+        </ul>
+
+        <div class="nav__buttons">
+          <a href="#" class="nav__button-link login">Login</a>
+          <a href="#" class="nav__button-link register">Get Started</a>
+        </div>
+
+        <div id="navClose" class="nav__drawer close" role="button">
+          <i class="ri-close-line"></i>
+        </div>
+      </div>
+
+      <div id="navToggle" class="nav__drawer toggle" role="button">
+        <i class="ri-menu-line"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="home"></section>
+  </main>
 
   <script src="main.js" type="module"></script>
 </body>

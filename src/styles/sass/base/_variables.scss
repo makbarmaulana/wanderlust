@@ -16,3 +16,12 @@ $fw-semibold: 600;
 $fs-small: 14px;
 $fs-normal: 16px;
 $fs-large: 18px;
+
+$header-height: 4rem;
+
+$breakpoints: (
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  x-large: 1440px,
+);

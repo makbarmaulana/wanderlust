@@ -1,13 +1,28 @@
-@use 'variables' as *;
+@use './variables' as *;
+@use './mixins' as *;
 
-html {
-  font-family: $typeface-primary;
-  color: $text-color;
-  font-size: $fs-normal;
-  font-weight: $fw-normal;
-  scroll-behavior: smooth;
-}
+.nav {
+  $fs-nav: 1rem;
 
-body {
-  background-color: $background-color;
+  .nav__link {
+    @include typography($fs-nav, $fw-semibold, $text-color);
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-color
+    }
+  }
+
+  .nav__button-link {
+    @include typography($fs-nav, $fw-semibold, $text-color);
+    transition: color 0.3s;
+
+    &.register {
+      color: $accent-color;
+    }
+
+    &:hover {
+      color: $accent-color
+    }
+  }
 }

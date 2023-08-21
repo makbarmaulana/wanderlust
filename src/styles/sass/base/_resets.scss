@@ -1,0 +1,33 @@
+@use './variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $typeface-primary;
+  color: $text-color;
+  font-size: $fs-normal;
+  font-weight: $fw-normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $background-color;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
