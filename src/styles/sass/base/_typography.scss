@@ -1,20 +1,20 @@
 @use './variables' as *;
-@use './mixins' as *;
+@use './mixins' as mx;
 
 .nav {
   $fs-nav: 1rem;
 
   .nav__link {
-    @include typography($fs-nav, $fw-semibold, $text-color);
+    @include mx.typography($fs-nav, $fw-semibold, $text-color);
     transition: color 0.3s;
 
     &:hover {
-      color: $accent-color
+      color: $accent-color;
     }
   }
 
   .nav__button-link {
-    @include typography($fs-nav, $fw-semibold, $text-color);
+    @include mx.typography($fs-nav, $fw-semibold, $text-color);
     transition: color 0.3s;
 
     &.register {
@@ -22,7 +22,7 @@
     }
 
     &:hover {
-      color: $accent-color
+      color: $accent-color;
     }
   }
 }

@@ -12,6 +12,19 @@ html {
   font-size: $fs-normal;
   font-weight: $fw-normal;
   scroll-behavior: smooth;
+
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+
+    &-thumb {
+      border-radius: 0.5rem;
+      background-color: $accent-color;
+    }
+    &-track {
+      border-radius: 0.5rem;
+      background-color: $title-color;
+    }
+  }
 }
 
 body {
@@ -21,10 +34,19 @@ body {
 a {
   display: block;
   text-decoration: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+button {
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 img {
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 ul,

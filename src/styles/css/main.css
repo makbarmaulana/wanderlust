@@ -11,6 +11,17 @@ html {
   font-weight: 400;
   scroll-behavior: smooth;
 }
+html ::-webkit-scrollbar {
+  width: 0.5rem;
+}
+html ::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: hsl(195, 100%, 30%);
+}
+html ::-webkit-scrollbar-track {
+  border-radius: 0.5rem;
+  background-color: hsl(210, 52%, 20%);
+}
 
 body {
   background-color: hsl(210, 55%, 85%);
@@ -19,10 +30,25 @@ body {
 a {
   display: block;
   text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+}
+
+button {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
 }
 
 img {
   display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
 }
 
 ul,
@@ -167,4 +193,74 @@ ol {
     display: none;
     visibility: hidden;
   }
+}
+.home {
+  position: relative;
+  min-height: 100vh;
+}
+
+.home__container {
+  padding-top: 7rem;
+}
+
+.home__content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.home__data {
+  display: grid;
+  row-gap: 1rem;
+  padding: 0 2rem;
+}
+.home__data .home__subtitle {
+  font-size: 0.875rem;
+  color: hsl(195, 100%, 30%);
+  letter-spacing: 0.215em;
+}
+.home__data .home__title {
+  font-family: "Lora", serif;
+  font-size: 2.25rem;
+  color: hsl(210, 52%, 20%);
+}
+.home__data .home__description {
+  margin-bottom: 1.5rem;
+}
+.home__data .home__button {
+  display: inline-block;
+  color: #fff;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(90deg, hsl(210, 55%, 20%), hsl(192, 62%, 25%));
+  box-shadow: 0 24px 32px hsla(210, 54%, 24%, 0.3);
+}
+
+.home .home__bird-1, .home .home__bird-2 {
+  position: absolute;
+  width: 4rem;
+}
+.home .home__bird-1 {
+  left: 1rem;
+  bottom: -6rem;
+  rotate: -30deg;
+}
+.home .home__bird-2 {
+  right: 1rem;
+  top: 0;
+  rotate: -15deg;
+}
+
+.home__images img {
+  position: absolute;
+  bottom: 0;
+  left: -7rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  z-index: -1;
 }/*# sourceMappingURL=main.css.map */

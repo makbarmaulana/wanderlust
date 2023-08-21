@@ -1,0 +1,80 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as mx;
+
+.home {
+  position: relative;
+  min-height: 100vh;
+}
+
+.home__container {
+  padding-top: calc($header-height + 3rem);
+}
+
+.home__content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.home__data {
+  display: grid;
+  row-gap: 1rem;
+  padding: 0 2rem;
+
+  .home__subtitle {
+    font-size: 0.875rem;
+    color: $accent-color;
+    letter-spacing: 0.215em;
+  }
+
+  .home__title {
+    font-family: $typeface-secondary;
+    font-size: 2.25rem;
+    color: $title-color;
+  }
+
+  .home__description {
+    margin-bottom: 1.5rem;
+  }
+
+  .home__button {
+    display: inline-block;
+    color: $white-color;
+    width: max-content;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    background: $gradient-color;
+    box-shadow: 0 24px 32px hsla(210, 54%, 24%, 0.3);
+  }
+}
+
+.home {
+  & &__bird-1,
+  & &__bird-2 {
+    position: absolute;
+    width: 4rem;
+  }
+
+  & &__bird-1 {
+    left: 1rem;
+    bottom: -6rem;
+    rotate: -30deg;
+  }
+
+  & &__bird-2 {
+    right: 1rem;
+    top: 0;
+    rotate: -15deg;
+  }
+}
+
+.home__images {
+  img {
+    position: absolute;
+    bottom: 0;
+    left: -7rem;
+    object-fit: cover;
+    user-select: none;
+    z-index: -1;
+  }
+}
