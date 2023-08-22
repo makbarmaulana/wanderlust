@@ -1,0 +1,136 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as mx;
+
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  background-color: $background-color;
+  z-index: 99;
+  height: $header-height;
+
+  &.shadow {
+    box-shadow: 0 1px 16px rgba($title-color, 0.1);
+  }
+}
+
+.nav {
+  position: relative;
+  height: $header-height;
+  @include mx.flexbox(row, center, space-between);
+  gap: 2rem;
+}
+
+.nav__logo {
+  @include mx.flexbox(row, center);
+  gap: 0.75rem;
+
+  img {
+    width: 2.5rem;
+  }
+
+  .logo__name {
+    font-size: 1rem;
+    font-weight: $fw-medium;
+    color: $accent-color;
+  }
+}
+
+.nav__menu {
+  &.show-menu {
+    top: 0;
+  }
+
+  position: fixed;
+  inset: 0 0 auto;
+  top: -100%;
+  @include mx.flexbox(column);
+  gap: 1rem;
+  padding: $header-height 0 2rem;
+  align-items: center;
+  transition: top 0.4s;
+  background-color: $background-color;
+  box-shadow: 0 1px 16px rgba($title-color, 0.1);
+
+  .nav__list {
+    @include mx.flexbox(column, center);
+    gap: 2rem;
+  }
+
+  .nav__buttons {
+    margin-top: 2rem;
+    @include mx.flexbox(column, center);
+    gap: 2rem;
+
+    .register {
+      @include mx.button();
+      border: 2px solid $accent-color;
+      background-color: rgba($white-color, 0.5);
+      transition: background 0.3s;
+
+      &:hover {
+        background-color: $white-color;
+      }
+    }
+  }
+}
+
+.nav__drawer {
+  padding: 0.25rem;
+  display: inline-flex;
+  font-size: 2rem;
+  color: $title-color;
+  cursor: pointer;
+
+  &.close {
+    position: absolute;
+    top: 0.875rem;
+    right: 1.25rem;
+  }
+}
+
+@include mx.minScreen(medium) {
+  .nav {
+    justify-content: start;
+    gap: 2rem;
+  }
+
+  .nav__menu {
+    position: relative;
+    visibility: visible;
+    flex-direction: row;
+    inset: unset;
+    top: unset;
+    padding: 0;
+    flex: 1;
+    box-shadow: none;
+    background-color: transparent;
+
+    .nav__list {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .nav__buttons {
+      margin-top: 0;
+      margin-left: auto;
+      flex-direction: row;
+    }
+  }
+
+  .nav__drawer {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@include mx.minScreen(medium) {
+  .nav .logo__name {
+    display: none;
+  }
+}
+
+@include mx.minScreen(large) {
+  .nav .nav__list {
+    gap: 3rem;
+  }
+}

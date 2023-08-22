@@ -1,0 +1,67 @@
+@use './variables' as *;
+@use './mixins' as mx;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $typeface-primary;
+  color: $text-color;
+  font-size: $fs-small;
+  font-weight: $fw-normal;
+  scroll-behavior: smooth;
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+
+    &-thumb {
+      border-radius: 8px;
+      background-color: $accent-color;
+    }
+
+    &-track {
+      border-radius: 8px;
+      background-color: $title-color;
+    }
+  }
+
+  @include mx.minScreen(medium) {
+    font-size: $fs-normal;
+  }
+}
+
+body {
+  background-color: $background-color;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  white-space: nowrap;
+}
+
+button {
+  background-color: transparent;
+  border-color: transparent;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  white-space: nowrap;
+}
+
+img {
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}

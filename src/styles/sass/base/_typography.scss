@@ -1,0 +1,46 @@
+@use './variables' as *;
+@use './mixins' as mx;
+
+.nav {
+  .nav__link {
+    @include mx.typography($fs-normal, $fw-medium, $text-color);
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  .nav__button-link {
+    @include mx.typography($fs-normal, $fw-medium, $text-color);
+    transition: color 0.3s;
+
+    &.register {
+      color: $accent-color;
+    }
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.hero__subtitle {
+  font-size: 0.875rem;
+  color: $accent-color;
+  letter-spacing: 0.2em;
+}
+
+.hero__title {
+  font-family: $typeface-secondary;
+  font-size: 2rem;
+  color: $title-color;
+
+  @include mx.minScreen(small) {
+    font-size: 2.25rem;
+  }
+}
+
+.hero__description {
+  font-style: italic;
+}

@@ -1,0 +1,28 @@
+@use './variables' as *;
+
+@mixin minScreen($screen) {
+  @media screen and (min-width: map-get($breakpoints, $screen)) {
+    @content;
+  }
+}
+
+@mixin typography($size: 1rem, $weight: $fw-normal, $color: $text-color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin button($size: 1rem, $weight: $fw-normal) {
+  font-size: $size;
+  font-weight: $weight;
+  padding: 0.75em 1.3em;
+  border-radius: 0.75em;
+  width: max-content;
+}
+
+@mixin flexbox($direction: row, $align: start, $justify: start) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}

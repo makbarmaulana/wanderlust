@@ -1,0 +1,90 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as mx;
+
+.main {
+  position: relative;
+  min-height: 100vh;
+}
+
+.hero__section {
+  position: relative;
+  height: 100vh;
+  padding-top: calc($header-height + 3rem);
+  overflow: hidden;
+}
+
+.hero__content {
+  position: relative;
+  max-width: 30rem;
+  z-index: 1;
+}
+
+.hero__data {
+  @include mx.flexbox(column);
+  row-gap: 1.25em;
+}
+
+.hero__button {
+  margin-top: 1.5rem;
+  @include mx.button(1.125rem, $fw-medium);
+  color: $white-color;
+  background: $gradient-color;
+  box-shadow: 0 12px 24px rgba($title-color, 0.3);
+  transition: 0.3s;
+
+  &:hover {
+    color: $yellow-color;
+    box-shadow: 0 12px 24px rgba($title-color, 0.4);
+  }
+}
+
+.hero__bird-1,
+.hero__bird-2 {
+  position: absolute;
+  width: 3rem;
+}
+
+.hero__bird-1 {
+  left: -1rem;
+  bottom: -6rem;
+  rotate: -30deg;
+}
+
+.hero__bird-2 {
+  right: 0;
+  top: 0;
+  rotate: -15deg;
+}
+
+.hero__images {
+  img {
+    position: absolute;
+    bottom: -1rem;
+    left: -1rem;
+    user-select: none;
+    z-index: -1;
+  }
+
+  & &-1 {
+    width: 90%;
+    left: 0;
+  }
+
+  @include mx.minScreen(large) {
+    img {
+      left: -3rem;
+    }
+
+    & &-1 {
+      width: auto;
+    }
+
+    & &-3 {
+      bottom: -4rem;
+    }
+
+    & &-4 {
+      bottom: -7rem;
+    }
+  }
+}
