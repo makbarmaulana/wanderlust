@@ -1,11 +1,12 @@
-$typeface-primary: 'Poppins', sans-serif;
+$typeface-primary: 'Inter', sans-serif;
 $typeface-secondary: 'Lora', serif;
 
 $accent-color: hsl(195, 100%, 30%);
 $title-color: hsl(210, 52%, 20%);
 $text-color: hsl(210, 24%, 15%);
 $background-color: hsl(210, 55%, 85%);
-$white-color: #fff;
+$white-color: hsl(0, 0%, 100%);
+$yellow-color: hsl(49, 100%, 56%);
 $gradient-color: linear-gradient(90deg, hsl(210, 55%, 20%), hsl(192, 62%, 25%));
 
 $fw-light: 300;
@@ -15,9 +16,9 @@ $fw-semibold: 600;
 
 $fs-small: 14px;
 $fs-normal: 16px;
-$fs-large: 18px;
+$fs-medium: 18px;
 
-$header-height: 4rem;
+$header-height: 4.5em;
 
 $breakpoints: (
   small: 375px,

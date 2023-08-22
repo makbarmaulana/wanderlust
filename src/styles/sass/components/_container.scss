@@ -1,8 +1,10 @@
-.container {
-  max-width: 1120px;
-  margin-inline: auto;
-}
+@use '../base/mixins' as mx;
 
-.overflow {
-  overflow: hidden;
+.container {
+  max-width: 85%;
+  margin-inline: auto;
+
+  @include mx.minScreen(medium) {
+    max-width: 80%;
+  }
 }

@@ -1,12 +1,8 @@
 @use './variables' as *;
 
-@mixin minScreen($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-      @content;
-    }
-  } @else {
-    @warn "Breakpoint #{$breakpoint} not found in $breakpoints.";
+@mixin minScreen($screen) {
+  @media screen and (min-width: map-get($breakpoints, $screen)) {
+    @content;
   }
 }
 
@@ -14,4 +10,19 @@
   font-size: $size;
   font-weight: $weight;
   color: $color;
+}
+
+@mixin button($size: 1rem, $weight: $fw-normal) {
+  font-size: $size;
+  font-weight: $weight;
+  padding: 0.75em 1.3em;
+  border-radius: 0.75em;
+  width: max-content;
+}
+
+@mixin flexbox($direction: row, $align: start, $justify: start) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
 }

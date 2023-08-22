@@ -1,3 +1,4 @@
+const header = document.getElementById('header');
 const navMenu = document.getElementById('navMenu');
 const navList = document.getElementById('navList');
 const navToggle = document.getElementById('navToggle');
@@ -11,10 +12,21 @@ function closeDrawer() {
   navMenu.classList.remove('show-menu');
 }
 
-navToggle.addEventListener('click', openDrawer);
-navClose.addEventListener('click', closeDrawer);
-navList.addEventListener('click', ({ target }) => {
-  if (target.classList.contains('nav__link')) {
-    closeDrawer();
+function shadowAnimation() {
+  if (this.scrollY >= 50) {
+    header.classList.add('shadow');
+  } else {
+    header.classList.remove('shadow');
   }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('scroll', shadowAnimation);
+  navToggle.addEventListener('click', openDrawer);
+  navClose.addEventListener('click', closeDrawer);
+  navList.addEventListener('click', ({ target }) => {
+    if (target.classList.contains('nav__link')) {
+      closeDrawer();
+    }
+  });
 });
